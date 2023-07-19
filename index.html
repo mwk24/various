@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-family: Arial, sans-serif;
+}
+
+th, td {
+  padding: 10px;
+}
+
+th {
+  cursor: pointer;
+  background-color: #f0f0f0;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.color-display {
+  width: 50px;
+  height: 50px;
+}
+</style>
+</head>
+<body>
+
+<p>Click the headers to sort by that column.</p>
+
+<table id="colorTable">
+<tr><th onclick="sortTable(0)">Color Hex Value</th><th onclick="sortTable(1)">Number of Usages</th><th onclick="sortTable(2)">List of Components Used In</th><th>Color Display</th></tr>
+<tr><td>#000000</td><td>1</td><td>styles</td><td><div class="color-display" style="background-color: #000000;"></div></td></tr>
+<tr><td>#007AFF</td><td>1</td><td>UserBio</td><td><div class="color-display" style="background-color: #007AFF;"></div></td></tr>
+<tr><td>#0088f8</td><td>1</td><td>palette</td><td><div class="color-display" style="background-color: #0088f8;"></div></td></tr>
+<tr><td>#090C20</td><td>1</td><td>styles</td><td><div class="color-display" style="background-color: #090C20;"></div></td></tr>
+<tr><td>#0D0E0F</td><td>4</td><td>styles</td><td><div class="color-display" style="background-color: #0D0E0F;"></div></td></tr>
+<tr><td>#111314</td><td>20</td><td>styles, index, InviteScreen</td><td><div class="color-display" style="background-color: #111314;"></div></td></tr>
+<tr><td>#12231E</td><td>2</td><td>InviteScreen</td><td><div class="color-display" style="background-color: #12231E;"></div></td></tr>
+<tr><td>#143913</td><td>1</td><td>colors</td><td><div class="color-display" style="background-color: #143913;"></div></td></tr>
+<tr><td>#181D1F</td><td>3</td><td>index, styles</td><td><div class="color-display" style="background-color: #181D1F;"></div></td></tr>
+<tr><td>#193A30</td><td>2</td><td>index, InviteScreen</td><td><div class="color-display" style="background-color: #193A30;"></div></td></tr>
+<tr><td>#1B1D1F</td><td>50</td><td>style, styles, InviteScreen, CreateDiscussionComment, index, DiscussionCommentItem</td><td><div class="color-display" style="background-color: #1B1D1F;"></div></td></tr>
+<tr><td>#1B1D1f</td><td>1</td><td>styles</td><td><div class="color-display" style="background-color: #1B1D1f;"></div></td></tr>
+<tr><td>#202020</td><td>1</td><td>TermsAndConditionModal</td><td><div class="color-display" style="background-color: #202020;"></div></td></tr>
+<tr><td>#203349</td><td>7</td><td>styles, DiscussionCommentItem</td><td><div class="color-display" style="background-color: #203349;"></div></td></tr>
+<tr><td>#205241</td><td>1</td><td>styles</td><td><div class="color-display" style="background-color: #205241;"></div></td></tr>
+<tr><td>#231C14</td><td>3</td><td>styles, InviteScreen</td><td><div class="color-display" style="background-color: #231C14;"></div></td></tr>
+<tr><td>#262626</td><td>10</td><td>PhoneNumberInput, styles, Dynamic, LoginWithPhoneNumber, index, LoginOrSignUpForm</td><td><div class="color-display" style="background-color: #262626;"></div></td></tr>
+<tr><td>#27405D</td><td>2</td><td>styles, MarkDownParseText</td><td><div class="color-display" style="background-color: #27405D;"></div></td></tr>
+<tr><td>#292C2E</td><td>27</td><td>styles, index, LoginOrSignUpForm, InviteScreen</td><td><div class="color-display" style="background-color: #292C2E;"></div></td></tr>
+<tr><td>#2E1211</td><td>1</td><td>index</td><td><div class="color-display" style="background-color: #2E1211;"></div></td></tr>
+<tr><td>#2E3133</td><td>60</td><td>styles, index</td><td><div class="color-display" style="background-color: #2E3133;"></div></td></tr>
+<tr><td>#2a2a31</td><td>1</td><td>colors</td><td><div class="color-display" style="background-color: #2a2a31;"></div></td></tr>
+<tr><td>#2a2c2e</td><td>1</td><td>styles</td><td><div class="color-display" style="background-color: #2a2c2e;"></div></td></tr>
+<tr><td>#375E8A</td><td>28</td><td>styles, index</td><td><div class="color-display" style="background-color: #375E8A;"></div></td></tr>
+<tr><td>#3A2D1A</td><td>3</td><td>styles, InviteScreen</td><td><div class="color-display" style="background-color: #3A2D1A;"></div></td></tr>
+<tr><td>#3F628A</td><td>1</td><td>InviteButton</td><td><div class="color-display" style="background-color: #3F628A;"></div></td></tr>
+<tr><td>#405d86</td><td>2</td><td>TabBarTop, styles</td><td><div class="color-display" style="background-color: #405d86;"></div></td></tr>
+<tr><td>#424547</td><td>20</td><td>CreateDiscussionComment, styles, index</td><td><div class="color-display" style="background-color: #424547;"></div></td></tr>
+<tr><td>#434647</td><td>1</td><td>styles</td><td><div class="color-display" style="background-color: #434647;"></div></td></tr>
+<tr><td>#48275D</td><td>1</td><td>styles</td><td><div class="color-display" style="background-color: #48275D;"></div></td></tr>
+<tr><td>#4e1c1c</td><td>1</td><td>colors</td><td><div class="color-display" style="background-color: #4e1c1c;"></div></td></tr>
+<tr><td>#523E21</td><td>1</td><td>styles</td><td><div class="color-display" style="background-color: #523E21;"></div></td></tr>
+<tr><td>#5F6266</td><td>11</td><td>styles, LoginOrSignUpForm, InviteScreen</td><td><div class="color-display" style="background-color: #5F6266;"></div></td></tr>
+<tr><td>#5F7EA1</td><td>1</td><td>styles</td><td><div class="color-display" style="background-color: #5F7EA1;"></div></td></tr>
+<tr><td>#694F28</td><td>1</td><td>styles</td><td><div class="color-display" style="background-color: #694F28;"></div></td></tr>
+<tr><td>#737373</td><td>3</td><td>index, PostHeader, styles</td><td><div class="color-display" style="background-color: #737373;"></div></td></tr>
+<tr><td>#81602F</td><td>2</td><td>styles</td><td><div class="color-display" style="background-color: #81602F;"></div></td></tr>
+<tr><td>#82878C</td><td>1</td><td>DiscussionCommentList</td><td><div class="color-display" style="background-color: #82878C;"></div></td></tr>
+<tr><td>#868B8F</td><td>31</td><td>styles, index, DiscussionCommentList, InviteScreen</td><td><div class="color-display" style="background-color: #868B8F;"></div></td></tr>
+<tr><td>#8d8d8d</td><td>1</td><td>PersonaHeader</td><td><div class="color-display" style="background-color: #8d8d8d;"></div></td></tr>
+<tr><td>#919191</td><td>6</td><td>ActivityModal, PostCommon, styles, RemixPulloutModal, DiscussionEmojiList, index</td><td><div class="color-display" style="background-color: #919191;"></div></td></tr>
+<tr><td>#933D38</td><td>1</td><td>index</td><td><div class="color-display" style="background-color: #933D38;"></div></td></tr>
+<tr><td>#969696</td><td>7</td><td>index, LoginWithPhoneNumber, LoginOrSignUpForm, styles</td><td><div class="color-display" style="background-color: #969696;"></div></td></tr>
+<tr><td>#9E7537</td><td>1</td><td>styles</td><td><div class="color-display" style="background-color: #9E7537;"></div></td></tr>
+<tr><td>#9FD0BF</td><td>3</td><td>styles, InviteScreen</td><td><div class="color-display" style="background-color: #9FD0BF;"></div></td></tr>
+<tr><td>#A0AEB2</td><td>1</td><td>styles</td><td><div class="color-display" style="background-color: #A0AEB2;"></div></td></tr>
+<tr><td>#AAAEB2</td><td>64</td><td>CreateDiscussionComment, styles, DiscussionCommentItem, InviteScreen</td><td><div class="color-display" style="background-color: #AAAEB2;"></div></td></tr>
+<tr><td>#B0B000</td><td>1</td><td>MarkDown</td><td><div class="color-display" style="background-color: #B0B000;"></div></td></tr>
+<tr><td>#B15F5F</td><td>5</td><td>styles</td><td><div class="color-display" style="background-color: #B15F5F;"></div></td></tr>
+<tr><td>#BFC3C7</td><td>11</td><td>styles</td><td><div class="color-display" style="background-color: #BFC3C7;"></div></td></tr>
+<tr><td>#BFE0D4</td><td>2</td><td>index, InviteScreen</td><td><div class="color-display" style="background-color: #BFE0D4;"></div></td></tr>
+<tr><td>#C1A77F</td><td>1</td><td>index</td><td><div class="color-display" style="background-color: #C1A77F;"></div></td></tr>
+<tr><td>#D0BD9F</td><td>4</td><td>styles, InviteScreen</td><td><div class="color-display" style="background-color: #D0BD9F;"></div></td></tr>
+<tr><td>#D0D3D6</td><td>72</td><td>styles, InviteScreen, CreateDiscussionComment, index, DiscussionEmojiList, LoginOrSignUpForm, MarkDownParseText</td><td><div class="color-display" style="background-color: #D0D3D6;"></div></td></tr>
+<tr><td>#D4A9FF</td><td>1</td><td>styles</td><td><div class="color-display" style="background-color: #D4A9FF;"></div></td></tr>
+<tr><td>#D8D3D6</td><td>1</td><td>styles</td><td><div class="color-display" style="background-color: #D8D3D6;"></div></td></tr>
+<tr><td>#E0D3BF</td><td>3</td><td>InviteScreen</td><td><div class="color-display" style="background-color: #E0D3BF;"></div></td></tr>
+<tr><td>#E2E2E2</td><td>8</td><td>styles</td><td><div class="color-display" style="background-color: #E2E2E2;"></div></td></tr>
+<tr><td>#E5E5E5</td><td>1</td><td>styles</td><td><div class="color-display" style="background-color: #E5E5E5;"></div></td></tr>
+<tr><td>#E6E8EB</td><td>17</td><td>styles, DiscussionCommentHeader</td><td><div class="color-display" style="background-color: #E6E8EB;"></div></td></tr>
+<tr><td>#EFE9DF</td><td>1</td><td>styles</td><td><div class="color-display" style="background-color: #EFE9DF;"></div></td></tr>
+<tr><td>#F0F2F5</td><td>38</td><td>styles</td><td><div class="color-display" style="background-color: #F0F2F5;"></div></td></tr>
+<tr><td>#FFFFFF</td><td>10</td><td>styles</td><td><div class="color-display" style="background-color: #FFFFFF;"></div></td></tr>
+<tr><td>#a7a7a7</td><td>4</td><td>Modal, DroidBottomModal</td><td><div class="color-display" style="background-color: #a7a7a7;"></div></td></tr>
+<tr><td>#efefef</td><td>1</td><td>ViewPictures</td><td><div class="color-display" style="background-color: #efefef;"></div></td></tr>
+<tr><td>#fbfbfb</td><td>2</td><td>AppDarkTheme, text</td><td><div class="color-display" style="background-color: #fbfbfb;"></div></td></tr>
+
+</table>
+
+<script>
+var sortDirection = {};
+
+function sortTable(n) {
+  var table, rows, switching, i, x, y, shouldSwitch;
+  table = document.getElementById("colorTable");
+  switching = true;
+  if (sortDirection[n] == undefined || sortDirection[n] == "desc") {
+    sortDirection[n] = "asc";
+  } else {
+    sortDirection[n] = "desc";
+  }
+  while (switching) {
+    switching = false;
+    rows = table.rows;
+    for (i = 1; i < (rows.length - 1); i++) {
+      shouldSwitch = false;
+      x = rows[i].getElementsByTagName("TD")[n];
+      y = rows[i + 1].getElementsByTagName("TD")[n];
+      if (n == 1) { // If sorting the "Number of Usages" column, compare as numbers
+        if (sortDirection[n] == "asc") {
+          if (Number(x.innerHTML) > Number(y.innerHTML)) {
+            shouldSwitch = true;
+            break;
+          }
+        } else {
+          if (Number(x.innerHTML) < Number(y.innerHTML)) {
+            shouldSwitch = true;
+            break;
+          }
+        }
+      } else { // Otherwise, compare as strings
+        if (sortDirection[n] == "asc") {
+          if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+            shouldSwitch = true;
+            break;
+          }
+        } else {
+          if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+            shouldSwitch = true;
+            break;
+          }
+        }
+      }
+    }
+    if (shouldSwitch) {
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+    }
+  }
+}
+window.onload = function() {
+  sortTable(1);
+}
+</script>
+
+</body>
+</html>
